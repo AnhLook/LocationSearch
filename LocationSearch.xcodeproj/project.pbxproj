@@ -19,9 +19,9 @@
 		BD042E3814215356008F4341 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD042E1714215356008F4341 /* UIKit.framework */; };
 		BD042E3914215356008F4341 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD042E1914215356008F4341 /* Foundation.framework */; };
 		BD042E3A14215356008F4341 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD042E1B14215356008F4341 /* CoreGraphics.framework */; };
-		BD042E4214215356008F4341 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD042E4014215356008F4341 /* InfoPlist.strings */; };
-		BD042E4514215356008F4341 /* LocationSearchTests.h in Resources */ = {isa = PBXBuildFile; fileRef = BD042E4414215356008F4341 /* LocationSearchTests.h */; };
-		BD042E4714215356008F4341 /* LocationSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD042E4614215356008F4341 /* LocationSearchTests.m */; };
+		BD042E5114215427008F4341 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD042E5014215427008F4341 /* CoreLocation.framework */; };
+		BD042E5314215431008F4341 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD042E5214215431008F4341 /* MapKit.framework */; };
+		BD9666AE1431419400AF8F23 /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9666AD1431419400AF8F23 /* Result.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,22 +39,21 @@
 		BD042E1714215356008F4341 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BD042E1914215356008F4341 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BD042E1B14215356008F4341 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		BD042E1F14215356008F4341 /* LocationSearch-Info.plist */ = {isa = PBXFileReference; path = "LocationSearch-Info.plist"; sourceTree = "<group>"; };
+		BD042E1F14215356008F4341 /* LocationSearch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LocationSearch-Info.plist"; sourceTree = "<group>"; };
 		BD042E2114215356008F4341 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BD042E2314215356008F4341 /* LocationSearch-Prefix.pch */ = {isa = PBXFileReference; path = "LocationSearch-Prefix.pch"; sourceTree = "<group>"; };
+		BD042E2314215356008F4341 /* LocationSearch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocationSearch-Prefix.pch"; sourceTree = "<group>"; };
 		BD042E2414215356008F4341 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BD042E2614215356008F4341 /* LocationSearchAppDelegate.h */ = {isa = PBXFileReference; path = LocationSearchAppDelegate.h; sourceTree = "<group>"; };
+		BD042E2614215356008F4341 /* LocationSearchAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationSearchAppDelegate.h; sourceTree = "<group>"; };
 		BD042E2714215356008F4341 /* LocationSearchAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationSearchAppDelegate.m; sourceTree = "<group>"; };
 		BD042E2A14215356008F4341 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		BD042E2C14215356008F4341 /* LocationSearchViewController.h */ = {isa = PBXFileReference; path = LocationSearchViewController.h; sourceTree = "<group>"; };
+		BD042E2C14215356008F4341 /* LocationSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationSearchViewController.h; sourceTree = "<group>"; };
 		BD042E2D14215356008F4341 /* LocationSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationSearchViewController.m; sourceTree = "<group>"; };
 		BD042E3014215356008F4341 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LocationSearchViewController.xib; sourceTree = "<group>"; };
 		BD042E3714215356008F4341 /* LocationSearchTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationSearchTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD042E3F14215356008F4341 /* LocationSearchTests-Info.plist */ = {isa = PBXFileReference; path = "LocationSearchTests-Info.plist"; sourceTree = "<group>"; };
-		BD042E4114215356008F4341 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BD042E4314215356008F4341 /* LocationSearchTests-Prefix.pch */ = {isa = PBXFileReference; path = "LocationSearchTests-Prefix.pch"; sourceTree = "<group>"; };
-		BD042E4414215356008F4341 /* LocationSearchTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationSearchTests.h; sourceTree = "<group>"; };
-		BD042E4614215356008F4341 /* LocationSearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationSearchTests.m; sourceTree = "<group>"; };
+		BD042E5014215427008F4341 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BD042E5214215431008F4341 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BD9666AC1431419400AF8F23 /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Result.h; sourceTree = "<group>"; };
+		BD9666AD1431419400AF8F23 /* Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Result.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD042E5314215431008F4341 /* MapKit.framework in Frameworks */,
+				BD042E5114215427008F4341 /* CoreLocation.framework in Frameworks */,
 				BD042E1814215356008F4341 /* UIKit.framework in Frameworks */,
 				BD042E1A14215356008F4341 /* Foundation.framework in Frameworks */,
 				BD042E1C14215356008F4341 /* CoreGraphics.framework in Frameworks */,
@@ -85,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				BD042E1D14215356008F4341 /* LocationSearch */,
-				BD042E3D14215356008F4341 /* LocationSearchTests */,
 				BD042E1614215356008F4341 /* Frameworks */,
 				BD042E1414215355008F4341 /* Products */,
 			);
@@ -103,6 +103,8 @@
 		BD042E1614215356008F4341 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD042E5014215427008F4341 /* CoreLocation.framework */,
+				BD042E5214215431008F4341 /* MapKit.framework */,
 				BD042E1714215356008F4341 /* UIKit.framework */,
 				BD042E1914215356008F4341 /* Foundation.framework */,
 				BD042E1B14215356008F4341 /* CoreGraphics.framework */,
@@ -119,6 +121,8 @@
 				BD042E2C14215356008F4341 /* LocationSearchViewController.h */,
 				BD042E2D14215356008F4341 /* LocationSearchViewController.m */,
 				BD042E2F14215356008F4341 /* LocationSearchViewController.xib */,
+				BD9666AC1431419400AF8F23 /* Result.h */,
+				BD9666AD1431419400AF8F23 /* Result.m */,
 				BD042E1E14215356008F4341 /* Supporting Files */,
 			);
 			path = LocationSearch;
@@ -131,26 +135,6 @@
 				BD042E2014215356008F4341 /* InfoPlist.strings */,
 				BD042E2314215356008F4341 /* LocationSearch-Prefix.pch */,
 				BD042E2414215356008F4341 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		BD042E3D14215356008F4341 /* LocationSearchTests */ = {
-			isa = PBXGroup;
-			children = (
-				BD042E4414215356008F4341 /* LocationSearchTests.h */,
-				BD042E4614215356008F4341 /* LocationSearchTests.m */,
-				BD042E3E14215356008F4341 /* Supporting Files */,
-			);
-			path = LocationSearchTests;
-			sourceTree = "<group>";
-		};
-		BD042E3E14215356008F4341 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				BD042E3F14215356008F4341 /* LocationSearchTests-Info.plist */,
-				BD042E4014215356008F4341 /* InfoPlist.strings */,
-				BD042E4314215356008F4341 /* LocationSearchTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -232,8 +216,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD042E4214215356008F4341 /* InfoPlist.strings in Resources */,
-				BD042E4514215356008F4341 /* LocationSearchTests.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +245,7 @@
 				BD042E2514215356008F4341 /* main.m in Sources */,
 				BD042E2814215356008F4341 /* LocationSearchAppDelegate.m in Sources */,
 				BD042E2E14215356008F4341 /* LocationSearchViewController.m in Sources */,
+				BD9666AE1431419400AF8F23 /* Result.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +253,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD042E4714215356008F4341 /* LocationSearchTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,14 +291,6 @@
 			name = LocationSearchViewController.xib;
 			sourceTree = "<group>";
 		};
-		BD042E4014215356008F4341 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BD042E4114215356008F4341 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -332,7 +306,8 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2.1;
+				PRODUCT_NAME = LocationSearch;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -346,8 +321,9 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = LocationSearch;
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -443,6 +419,7 @@
 				BD042E4C14215356008F4341 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD042E4D14215356008F4341 /* Build configuration list for PBXNativeTarget "LocationSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +428,7 @@
 				BD042E4F14215356008F4341 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

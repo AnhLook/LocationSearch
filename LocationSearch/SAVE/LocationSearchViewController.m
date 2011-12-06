@@ -3,7 +3,7 @@
 //  LocationSearch
 //
 //  Created by Anh on 9/14/11.
-//  Copyright 2011 Looksys. All rights reserved.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import "LocationSearchViewController.h"
@@ -12,7 +12,6 @@
 
 @synthesize mapView;
 @synthesize searchBar;
-@synthesize locationManager;
 @synthesize currentLocation;
 @synthesize responseData;
 @synthesize results;
@@ -21,7 +20,6 @@
 {
     [mapView release];
     [searchBar release];
-    [locationManager release];
     [currentLocation release];
     [responseData release];
     [results release];
@@ -47,14 +45,10 @@
     [super viewDidLoad];
     
     // Create the result array.
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    self.results = array;
-    [array release];    
+    self.results = [[NSMutableArray alloc] init];
     
     // Create an instance of the Core Location CLLocationManager.
-    CLLocationManager *locMan = [[CLLocationManager alloc] init];
-    self.locationManager = locMan;
-    [locMan release];
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
     
     // Set the CLLocationManagerDelegate to self
     [locationManager setDelegate:self];
@@ -85,7 +79,6 @@
     
     self.mapView = nil;
     self.searchBar = nil;
-    self.locationManager = nil;
     self.currentLocation = nil;
     self.responseData = nil;
     self.results = nil;
@@ -156,27 +149,20 @@
 #pragma mark -
 #pragma mark Handle UISearchBar Delegate Methods
 
-/* When user clicks the SearchBar button, UISearchBar calls this delegate method
-   to handle the actual search.
-   In our case, this is where we format the search request, make the URL connection,
-   and send in the GET request.
- */
 - (void)searchBarSearchButtonClicked:(UISearchBar *)localsearchBar {
     
     NSLog(@"searchBarSearchButtonClicked");
     
-    // Tell the SearchBar to dismiss the associated keyboard.
-    [localsearchBar resignFirstResponder];
-
     // Get the search string from the searchBar passed in.
     // Note that the search text string may have % and & characters which have special meanings
     // in HTTP.  Therefore, we need to URL encode the searchString.
     
     NSString *searchString = [localsearchBar.text stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
     
+    
     NSLog(@"searchString = %@", searchString);
     
-    // Get our current latitude and longitude.
+    // Get the latitude and longitude.
     CLLocationDegrees latitude = self.currentLocation.coordinate.latitude;
     CLLocationDegrees longitude = self.currentLocation.coordinate.longitude;
     
@@ -184,7 +170,7 @@
     
     
     // Construct the URL to call.    
-    // We use Yahoo Local Search API, which is a REST-based API.
+    // We use Yahoo Local Search API.
     // For complete doc, go to:
     // http://developer.yahoo.com/search/local/V3/localSearch.html
     
@@ -216,15 +202,15 @@
     
     // Create the connection and send the request.
     // Specify that we will handle the NSURLConnection delegate methods ourselves.
-    // Note: 'connection' is released in connectionDidFinishLoading and 
+    // Note: connection is released in connectionDidFinishLoading and 
     // connection:didFailWithError.
     
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
-        
+    
     // Verify the connection
     if (connection) {
         // Instantiate the response data structure to hold the response.
-        // Note that this calls the 'data' method inherited from NSData which creates
+        // Note that this calls the data method inherited from NSData which creates
         // empty NSMutable data object.
         
         self.responseData = [NSMutableData data];  
@@ -246,6 +232,9 @@
         [alert show];
         [alert release];
     }  
+    
+    // Tell the SearchBar to dismiss the associated keyboard.
+    [localsearchBar resignFirstResponder];
 }
 
 
@@ -282,17 +271,6 @@
 #pragma mark -
 #pragma mark Handle MKMapView Delegate Methods
 
-/* 
- MKAnnotation is a protocol you need to adopt if you wish to show your object on a MKMapView. The coordinate property tells MKMapView where to place it. title and subtitle properties are optional but if you wish to show a callout view you are expected to implement title at a minimum.
- 
- MKAnnotationView visually presents the MKAnnotation on the MKMapView. The image property can be set to determine what to show for the annotation. However you can subclass it and implement drawRect: yourself.
- 
- MKPinAnnotationView is a subclass of MKAnnotationView that uses a Pin graphic as the image property. You can set the pin color and drop animation.
- 
- Don't forget about the leftCalloutAccessoryView and the rightCalloutAccessoryView properties of MKAnnotationView that can be used to customize the callout view.
- */
-
-
 /* MKMapView will call this method when the map needs the view for annotations.
  */
 - (MKAnnotationView *)mapView:(MKMapView *)mapView 
@@ -308,10 +286,6 @@
   
     if (!pinAnnotationView) {
         // We could not get a pin from the queue so init a new one.
-        // Note that we use autorelease here because we return pinAnnotationView 
-        // the pointer to the calling function, yet the name of this method 'mapView:' 
-        // does not suggest that the calling functions is responsible
-        // for deallocation of pinAnnotationView.
         pinAnnotationView = [[[MKPinAnnotationView alloc] 
                               initWithAnnotation:annotation 
                               reuseIdentifier:@"location"] autorelease];
@@ -441,7 +415,7 @@ didStartElement:(NSString *)elementName
     
     // Check to see which element we have found.
     // If it's a "Result", create a new instance of Result class to hold the result.
-    // "aResult" will be released in parser:didEndElement.
+    // aResult will be released in parser:didEndElement.
     
     if ([elementName isEqualToString:@"Result"]) {
         aResult = [[Result alloc] init];
@@ -449,7 +423,7 @@ didStartElement:(NSString *)elementName
     
     // If it's any other field that we're interested in, allocate and initialize
     // the capturedCharacters instance variable to prepare for the characters to come.
-    // "capturedCharacters" will be released in parser:didEndElement.
+    // capturedCharacters will be released in parser:didEndElement.
    
     else if ([elementName isEqualToString:@"Title"] ||
              [elementName isEqualToString:@"Address"] ||
@@ -543,7 +517,6 @@ didStartElement:(NSString *)elementName
         [elementName isEqualToString:@"AverageRating"]) {
         
         [capturedCharacters release];
-        capturedCharacters = nil;
     }
 }
 

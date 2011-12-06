@@ -3,7 +3,7 @@
 //  LocationSearch
 //
 //  Created by Anh on 9/14/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Looksys. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

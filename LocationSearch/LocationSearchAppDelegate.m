@@ -3,8 +3,13 @@
 //  LocationSearch
 //
 //  Created by Anh on 9/14/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Looksys. All rights reserved.
 //
+/* About this app:
+ This sample app explores the use of CoreLocation, UISearchBar and MKMapView.
+ It also explores making connection to a REST-based web service using the HTTP GET method
+ to perform a search based on the user's input.
+ */
 
 #import "LocationSearchAppDelegate.h"
 
